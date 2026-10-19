@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduNova AI - Educational Platform</title>
+  
+  <!-- Custom Graduation Cap Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+      <div>
+        <div class="logo">
+          <span class="logo-icon">🎓</span>
+          <h2>EduNova AI</h2>
+        </div>
+
+        <nav class="nav-menu">
+  <!-- 🏠 Home is now active by default -->
+  <a href="#" class="nav-item active" data-target="home-page">
+    <span class="nav-icon">🏠</span> Home
+  </a>
+  <!-- 📊 Dashboard is no longer active by default -->
+  <a href="#" class="nav-item" data-target="dashboard-page">
+    <span class="nav-icon">📊</span> Dashboard
+  </a>
+  <a href="#" class="nav-item" data-target="services-page">
+    <span class="nav-icon">🛠️</span> Services
+  </a>
+  <a href="#" class="nav-item" data-target="contact-page">
+    <span class="nav-icon">📞</span> Contact Us
+  </a>
+  <a href="#" class="nav-item" data-target="about-page">
+    <span class="nav-icon">ℹ️</span> About Us
+  </a>
+</nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>CRAFTED WITH ❤️ BY</p>
+        <strong>Yuvraj</strong>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+      
+      <!-- HEADER AREA -->
+      <header class="top-header">
+        <div>
+          <h1 id="header-title">Dashboard</h1>
+          <p id="header-subtitle">Empowering learners with AI-driven study tools.</p>
+        </div>
+      </header>
+
+      <!-- PAGE SECTIONS -->
+      <div class="content-body">
+
+        <!-- 1. HOME PAGE SECTION -->
+        <section id="home-page" class="page-section">
+          <div class="hero-card" style="background: linear-gradient(135deg, #10b981, #047857); color: white; padding: 2.5rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.2);">
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Welcome to EduNova AI</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 1.5rem;">Your ultimate AI-powered workspace for smart learning, concept simplification, and productivity tracking.</p>
+            <button id="exploreDashboardBtn" class="btn" style="background: white; color: #047857; width: auto; font-weight: 700;">Go to Dashboard</button>
+          </div>
+
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Platform Features</h3>
+          <div class="dashboard-grid">
+            <div class="card card-amber">
+              <h3 style="color: #b45309;">⏳ Focus Timer</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Track focused study sessions with precision using our integrated Pomodoro timer.</p>
+            </div>
+            <div class="card card-emerald">
+              <h3 style="color: #047857;">✅ Study Checklist</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Stay organized by managing your daily learning goals and academic tasks.</p>
+            </div>
+            <div class="card card-blue">
+              <h3 style="color: #1d4ed8;">💡 Concept Simplifier</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Break down complex textbook theories into beginner-friendly explanations instantly.</p>
+            </div>
+            <div class="card card-purple">
+              <h3 style="color: #6d28d9;">❓ Smart Quiz Generator</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Auto-generate practice test questions from your notes to test comprehension.</p>
+            </div>
+            <div class="card card-pink">
+              <h3 style="color: #be185d;">✍️ Essay & Writing Polish</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Review grammar, tone, and sentence structure for essays and research reports.</p>
+            </div>
+            <div class="card" style="border-top: 4px solid #06b6d4; background: linear-gradient(180deg, #cffaff 0%, #ffffff 100%);">
+              <h3 style="color: #0e7490;">🚀 Developer Hub</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Built and engineered by Yuvraj, integrating modern full-stack Node.js and Gemini AI.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DASHBOARD PAGE SECTION -->
+        <section id="dashboard-page" class="page-section hidden">
+          <div class="dashboard-grid">
+            
+            <!-- Pomodoro Focus Timer Widget (1 Column) -->
+            <div class="card widget-card timer-card-span card-amber">
+              <div class="card-header">
+                <h3 style="color: #b45309;">⏳ Pomodoro Focus Timer</h3>
+              </div>
+              <div class="timer-display">
+                <span id="timerMinutes">00</span>:<span id="timerSeconds">00</span>
+              </div>
+              <div class="timer-controls">
+                <button id="startTimerBtn" class="btn-sm" style="background: #f59e0b; color: white;">Start</button>
+                <button id="pauseTimerBtn" class="btn-sm" style="background: #64748b; color: white;">Pause</button>
+                <button id="resetTimerBtn" class="btn-sm" style="background: #ef4444; color: white;">Reset</button>
+              </div>
+            </div>
+
+            <!-- Daily Study Checklist Widget (2 Columns) -->
+            <div class="card widget-card checklist-card-span card-emerald">
+              <div class="card-header">
+                <h3 style="color: #047857;">✅ Daily Study Checklist</h3>
+                <span class="checklist-progress" id="checklistProgress" style="background: #d1fae5; color: #065f46; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">0/0 Done</span>
+              </div>
+              
+              <div class="checklist-items" id="checklistItems">
+                <!-- Dynamic tasks render here -->
+              </div>
+
+              <div class="checklist-add-form">
+                <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="35">
+                <button id="addTaskBtn" class="btn-sm" style="background: #10b981; color: white;">Add Task</button>
+              </div>
+            </div>
+
+            <!-- Concept Simplifier (ELI5) Widget (Full Width) -->
+            <div class="card widget-card full-width-card card-blue">
+              <div class="card-header">
+                <h3 style="color: #1d4ed8;">💡 Concept Simplifier (ELI5)</h3>
+              </div>
+              <textarea id="eli5Input" placeholder="Explain 'Quantum Entanglement' simply..."></textarea>
+              <button id="eli5Btn" class="btn" style="background: #3b82f6; color: white;">Simplify Concept</button>
+              <div id="eli5Output" class="output-box hidden"></div>
+            </div>
+
+            <!-- Smart Quiz Generator Widget (Full Width) -->
+            <div class="card widget-card full-width-card card-purple">
+              <div class="card-header">
+                <h3 style="color: #6d28d9;">❓ Smart Quiz Generator</h3>
+              </div>
+              <p class="widget-desc" style="margin-bottom: 1rem;">Paste study content to auto-generate practice questions.</p>
+              
+              <div class="quiz-controls-grid">
+                <textarea id="quizInput" placeholder="Paste study content for your practice questions..."></textarea>
+                
+                <div class="quiz-options">
+                  <div>
+                    <label for="quizNum">Number of questions</label>
+                    <select id="quizNum">
+                      <option value="3">3</option>
+                      <option value="5" selected>5</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div>
+
+                  <div style="margin-top: 0.75rem;">
+                    <label for="quizDifficulty">Difficulty</label>
+                    <select id="quizDifficulty">
+                      <option value="Easy">Easy</option>
+                      <option value="Medium" selected>Medium</option>
+                      <option value="Hard">Hard</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <button id="generateQuizBtn" class="btn" style="background: #8b5cf6; color: white;">Create Practice Quiz</button>
+              <div id="quizOutput" class="output-box hidden"></div>
+            </div>
+
+            <!-- Essay & Writing Polish Widget (Full Width) -->
+            <div class="card widget-card full-width-card card-pink">
+              <div class="card-header">
+                <h3 style="color: #be185d;">✍️ Essay & Writing Polish</h3>
+              </div>
+              <p class="widget-desc">Paste raw text to review tone, grammar, and sentence structure.</p>
+              
+              <textarea id="essayInput" placeholder="Writing canvas..."></textarea>
+              <button id="polishEssayBtn" class="btn" style="background: #ec4899; color: white;">Review Tone / Grammar</button>
+              <div id="essayOutput" class="output-box hidden"></div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 3. SERVICES PAGE SECTION -->
+        <section id="services-page" class="page-section hidden">
+          <div class="dashboard-grid">
+            <div class="card card-amber" style="min-height: 220px;">
+              <h3 style="color: #b45309;">💡 ELI5 Simplification Engine</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Deconstruct complex engineering, OS, and quantum theories into simple 5-year-old language with clear analogies and step-by-step key takeaways.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #fde68a; color: #92400e; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">ACTIVE TOOL</span>
+            </div>
+
+            <div class="card card-blue" style="min-height: 220px;">
+              <h3 style="color: #1d4ed8;">❓ Automated Quiz Engine</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Instantly transforms raw study notes and lecture summaries into custom-difficulty practice quizzes with structured solutions and answer keys.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #bfdbfe; color: #1e40af; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">ACTIVE TOOL</span>
+            </div>
+
+            <div class="card card-emerald" style="min-height: 220px;">
+              <h3 style="color: #047857;">✍️ Essay & Syntax Reviewer</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Analyzes academic reports, draft essays, and technical documentation to polish grammar, elevate tone, and improve overall sentence flow.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #a7f3d0; color: #065f46; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">ACTIVE TOOL</span>
+            </div>
+
+            <div class="card card-purple" style="min-height: 220px;">
+              <h3 style="color: #6d28d9;">⏱️ Pomodoro Focus Tracker</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Maintain uninterrupted focus sessions with real-time tracking to minimize distractions during long study hours.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #ddd6fe; color: #5b21b6; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">PRODUCTIVITY</span>
+            </div>
+
+            <div class="card card-pink" style="min-height: 220px;">
+              <h3 style="color: #be185d;">✅ Task Goal Manager</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Organize your daily study goals with interactive checklists that mark progress and cross off completed assignments.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #fbcfe8; color: #9d174d; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">PRODUCTIVITY</span>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #06b6d4; background: linear-gradient(180deg, #cffaff 0%, #ffffff 100%); min-height: 220px;">
+              <h3 style="color: #0e7490;">🚀 Smart API Integration</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.75rem; line-height: 1.6;">
+                Built on Express.js with automated local fallback handling, ensuring seamless performance whether connected to AI models or offline.
+              </p>
+              <span style="display:inline-block; margin-top: 1rem; padding: 0.25rem 0.6rem; background: #a5f3fc; color: #155e75; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">ARCHITECTURE</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. CONTACT PAGE SECTION -->
+        <section id="contact-page" class="page-section hidden">
+          <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="card card-blue">
+              <h2 style="color: #1d4ed8;">Get in Touch</h2>
+              <p style="color: var(--text-muted); margin: 1rem 0;">Have questions about EduNova AI or want to connect with the developer? Reach out directly using the form or details below.</p>
+              <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                <p><strong>👤 Developer:</strong> Yuvraj Dubey</p>
+                <p><strong>📧 Email Support:</strong> yuvrajdubey1234567@gmail.com</p>
+                <p><strong>💻 GitHub:</strong> github.com/Yuvraj040906</p>
+              </div>
+            </div>
+            <div class="card contact-card card-emerald">
+              <h2 style="color: #047857;">Send a Message</h2>
+              <form id="contactForm" style="margin-top: 1rem;">
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <label for="contactName" style="display:block; margin-bottom: 0.3rem; font-weight:600;">Name</label>
+                  <input type="text" id="contactName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <label for="contactEmail" style="display:block; margin-bottom: 0.3rem; font-weight:600;">Email</label>
+                  <input type="email" id="contactEmail" placeholder="Your Email" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1rem;">
+                  <label for="contactMessage" style="display:block; margin-bottom: 0.3rem; font-weight:600;">Message</label>
+                  <textarea id="contactMessage" placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="background: #10b981; color: white;">Send Message</button>
+              </form>
+              <div id="contactStatus" class="output-box hidden" style="margin-top: 1rem;"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. ABOUT PAGE SECTION -->
+        <section id="about-page" class="page-section hidden">
+          <div class="card card-purple" style="margin-bottom: 1.5rem;">
+            <h2 style="color: #6d28d9;">About EduNova AI</h2>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; line-height: 1.7;">
+              EduNova AI is a next-generation educational platform meticulously designed to help students stay organized, maintain focus with focus timers, and master complex engineering subjects with AI assistance.
+            </p>
+          </div>
+
+          <!-- Equal Height Balanced Cards -->
+          <div class="dashboard-grid" style="grid-template-columns: 1fr 1fr; align-items: stretch;">
+            <div class="card card-amber" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <div>
+                <h3 style="color: #b45309;">👨‍💻 Lead Developer</h3>
+                <h4 style="color: #b45309; margin-top: 0.5rem;">Yuvraj Dubey</h4>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; line-height: 1.6; font-size: 0.9rem;">
+                  Full-stack engineering student and AI enthusiast specializing in modern web platforms, intelligent automation, and educational tools.
+                </p>
+              </div>
+              <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-card); font-size: 0.8rem; color: var(--text-muted);">
+                Role: Full-Stack Developer & Designer
+              </div>
+            </div>
+
+            <div class="card card-pink" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+              <div>
+                <h3 style="color: #be185d;">🛠️ Tech Stack & Architecture</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; line-height: 1.6; font-size: 0.9rem;">
+                  • <strong>Frontend:</strong> HTML5, CSS3 Grid, JavaScript (ES6+)<br>
+                  • <strong>Backend:</strong> Node.js, Express.js, CORS, Dotenv<br>
+                  • <strong>AI Integration:</strong> Google Generative AI (`@google/generative-ai`) with resilient local fallbacks.
+                </p>
+              </div>
+              <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-card); font-size: 0.8rem; color: var(--text-muted);">
+                Environment: Node.js / Express
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
